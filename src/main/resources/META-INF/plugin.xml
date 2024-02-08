@@ -1,0 +1,41 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+  <version>1.0.0</version>
+  <idea-version since-build="222.3345.118" until-build="232.*" />
+  <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+  <id>com.creorai.whattodo</id>
+  <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+  <name>What ToDo?</name>
+  <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+  <vendor email="omnicreor@gmail.com" url="https://github.com/omnicreor">Creor AI</vendor>
+  <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+  <description><![CDATA[<p><strong>What ToDo?</strong> - Your Ultimate Task Management Assistant for IntelliJ IDEA.</p>
+    <p>Effortlessly track and manage your coding to-dos with <strong>What ToDo?</strong>, a powerful and intuitive tool designed to seamlessly integrate into your IntelliJ environment. This plugin scans your entire project for 'TODO', 'FIXME', and 'NOTE' comments, organizing them into a convenient, easy-to-navigate list.</p>
+    <p>Key Features:</p>
+    <ul>
+        <li><strong>Comprehensive Scanning:</strong> Automatically detects all to-do comments across various file types, ensuring you never miss a task.</li>
+        <li><strong>One-Click Navigation:</strong> Jump directly to the line of code from the to-do list, streamlining your workflow.</li>
+        <li><strong>Multi-Language Support:</strong> Works seamlessly with a variety of programming languages, catering to diverse development needs.</li>
+        <li><strong>User-Friendly Interface:</strong> Enjoy a clean, intuitive interface that simplifies task tracking.</li>
+    </ul>
+    <p>Whether you're tackling a large project or managing day-to-day coding tasks, <strong>What ToDo?</strong> is your go-to plugin for staying organized and efficient. Get ready to transform your coding experience and boost productivity with <strong>What ToDo?</strong> by Creor AI.</p>
+    <p>Visit our <a href="https://github.com/omnicreor">GitHub page</a> for more information and updates.</p>]]></description>
+  <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+  <depends>com.intellij.modules.platform</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <toolWindow id="What ToDo?" icon="/icons/whattodo_icon_16.png" anchor="right" factoryClass="com.creorai.whattodo.WhatToDoWindowFactory" />
+  </extensions>
+  Ï
+  <actions>
+    <!-- Define a new menu item in the main menu (Tools) -->
+    <action id="WhatToDoAction" class="com.creorai.whattodo.WhatToDoListAction" text="What ToDo?" description="Visualizes your TODO list" icon="/icons/whattodo_icon_16.png">
+      <add-to-group group-id="ToolsMenu" anchor="last" />
+      <add-to-group group-id="MainMenu" anchor="last" />
+      <add-to-group group-id="NavBarToolBar" anchor="last" />
+    </action>
+  </actions>
+</idea-plugin>
